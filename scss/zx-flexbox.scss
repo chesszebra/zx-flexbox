@@ -1,0 +1,72 @@
+@import "mixins/align-content";
+@import "mixins/align-items";
+@import "mixins/align-self";
+@import "mixins/display-flex";
+@import "mixins/display-inline-flex";
+@import "mixins/flex";
+@import "mixins/flex-basis";
+@import "mixins/flex-direction";
+@import "mixins/flex-flow";
+@import "mixins/flex-grow";
+@import "mixins/flex-shrink";
+@import "mixins/flex-wrap";
+@import "mixins/justify-content";
+@import "mixins/order";
+
+@import "alignment";
+@import "justification";
+
+.zx-flexbox {
+  @include zx-display-flex;
+  @include zx-justify-content(space-between);
+
+  > * {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  &.zx-flexbox-attached > * {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  > *:first-child {
+    margin-left: 0;
+  }
+
+  > *:last-child {
+    margin-right: 0;
+  }
+}
+
+.zx-flexbox-row-reverse {
+  @include zx-flex-direction(row-reverse);
+}
+
+.zx-flexbox-no-shrink {
+  flex-shrink: 0;
+}
+
+.zx-flexbox-grow,
+.zx-flexbox-equal > *,
+.zx-flexbox-justified > * {
+  @include zx-flex(1 1 0% !important);
+}
+
+.zx-flexbox-vertical {
+  @include zx-display-flex;
+  @include zx-flex-direction(column);
+  @include zx-justify-content(space-between);
+}
+
+.zx-flexbox-vertical.zx-flexbox-attached > *,
+.zx-flexbox-vertical.zx-flexbox-attached > * {
+  margin-top: 0;
+  margin-bottom: 0
+}
+
+@for $i from 0 through 9 {
+  .zx-flex-grow-#{$i} {
+    @include zx-flex-grow($i);
+  }
+}

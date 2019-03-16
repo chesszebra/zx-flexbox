@@ -1,0 +1,12 @@
+.zx-justify-content-center {
+  @include zx-justify-content(center !important);
+}
+
+.zx-justify-content-end {
+  @include zx-justify-content(flex-end !important);
+}
+
+.zx-space-around {
+  @include zx-display-flex;
+  @include zx-justify-content(space-around !important);
+}

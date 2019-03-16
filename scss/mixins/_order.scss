@@ -1,0 +1,10 @@
+/// A mixin that sets the order on a flex element.
+/// @pattern flexgrid
+/// @url http://w3.org/tr/css3-flexbox/#order-property
+@mixin zx-order($val: 0) {
+  -webkit-box-ordinal-group: $int + 1;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}

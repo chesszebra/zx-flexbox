@@ -1,0 +1,7 @@
+/// http://www.w3.org/TR/css3-flexbox/#flex-basis-property
+@mixin zx-flex-basis($value: auto) {
+  -webkit-flex-basis: $value;
+  -moz-flex-basis: $value;
+  -ms-flex-preferred-size: $value;
+  flex-basis: $value;
+}
